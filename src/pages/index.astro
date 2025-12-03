@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import Box from "../components/Box.astro";
+---
+
+<BaseLayout 
+  title="Inicio" 
+  description="Bienvenido a Manuel Urbano Ayarza, institución educativa pública con 350 estudiantes y 25 docentes comprometidos con educación de calidad en Colón, Panamá desde 1918."
+>
+  <section>
+    <Hero />
+    <article class="min-h-[100dvh] pt-[calc(var(--size-navbar-height)+10px)] animation-scroll-fade-in animation-timeline-x animation-timeline-range-50-100">
+      <Box className="p-4">
+        <h2 class="text-lg font-bold text-text-tertiary">Matrícula Actual</h2>
+      </Box>
+      <div class="grid grid-cols-1 gap-3 py-4 md:py-8 lg:grid-cols-2">
+        <div>
+          <div class="flex gap-2">
+            <Box className="p-4 md:p-8 w-48 text-center">
+              <p class="text-3xl font-bold text-text-primary">350</p>
+              <p class="text-text-tertiary">Estudiantes</p>
+            </Box>
+
+            <Box className="p-4 md:p-8 w-48 text-center">
+              <p class="text-3xl font-bold text-text-primary">25</p>
+              <p class="text-text-tertiary">Docentes</p>
+            </Box>
+          </div>
+        </div>
+        <div class="flex">
+            <img
+          src="/logos/escuela.png"
+          class="mask-b-from-10% mask-b-to-90%"
+          alt="Institución educativa Manuel Urbano Ayarza - Colón, Panamá"
+          class="rounded-2xl object-fit w-full h-auto"
+        />
+        </div>
+        
+      </div>
+    </article>
+  </section>
+</BaseLayout>

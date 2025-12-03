@@ -1,0 +1,33 @@
+---
+let structuredData;
+
+  structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'School',
+    'name': 'Manuel Urbano Ayarza',
+    'description': 'Institución educativa pública con educación de calidad desde 1918',
+    'url': Astro.site?.toString(),
+    'image': `${Astro.site}logos/escuela.png`,
+    'telephone': '+507444-0445"',
+    'address': {
+      '@type': 'PostalAddress',
+      'streetAddress': 'Cativá',
+      'addressLocality': 'Colón',
+      'addressRegion': 'Colón',
+      'postalCode': '',
+      'addressCountry': 'PA'
+    },
+    'sameAs': [
+      'https://www.instagram.com/manuelurbanoayarza'
+    ],
+    'founder': {
+      '@type': 'Person',
+      'name': 'Urbana Herrera'
+    },
+    'foundingDate': '1918',
+    'numberOfStudents': 350,
+    'numberOfTeachers': 25
+  };
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />

@@ -1,0 +1,142 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Box from "../components/Box.astro";
+---
+
+<BaseLayout 
+  title="Acerca de" 
+  description="Conoce la historia, misión y visión de Manuel Urbano Ayarza. Institución educativa con más de 100 años formando generaciones en Colón, Panamá."
+>
+  <section>
+      <h1 class="mt-0 font-bernoru font-bold text-3xl md:text-4xl lg:text-5xl">
+        Acerca de
+      </h1>
+    <article class="py-12 px-2 flex flex-col gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-8">
+
+            <div class="flex flex-col gap-2">
+                <Box className="p-4">
+                    <h2 class="text-lg font-bold text-text-tertiary">
+                    Misión
+                    </h2>
+                </Box>
+                <Box className="p-8">
+                    <p class="mt-4 text-base md:text-lg leading-relaxed">
+                    Nos visualizamos como una institución abierta, actualizada y de vanguardia que sirve de referencia positiva para la comunidad educativa nacional. Que articule los elementos propios de una organización integrada y democrática basada en el apoyo, el respeto y el aprovechamiento de las diferencias para lograr fines comunes.
+                    Queremos ser reconocidos como una institución de educación pública que ofrece la educación más alta de la provincia de Colón, haciendo práctico el lema: “por una educación científica y popular”.
+                    </p>
+                </Box>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <Box className="p-4">
+                    <h2 class="text-lg font-bold text-text-tertiary">
+                      Visión
+                    </h2>
+                </Box>
+
+                <Box className="p-8 h-full">
+                    <p class="mt-4 text-base md:text-lg leading-relaxed">
+                      Formar a nuestros estudiantes a que asuman actitudes y valores fundamentales, que adquiera conocimientos y desarrollen habilidades que le permita prepararse para enfrentar la vida, con espíritu creativo, emprendedor, dinámico y positivo para, de ese modo tomar decisiones sustentables en el tiempo, a fin de responder a una sociedad cambiante y proyectarse a un futuro con un proyecto de vida personal útil a la sociedad y acorde a sus intereses.
+                    </p>
+                </Box>
+            </div>
+            
+
+        </div>
+      <div
+        class="grid grid-cols-1 lg:grid-cols-[300px_minmax(200px,_1fr)] gap-2  md:gap-8 grid-rows-[auto_auto]"
+      >
+        <div>
+          <img
+            src="/logos/Manuel-Urbano-Ayarza.png"
+            alt="Manuel Urbano Ayarza - Personaje histórico de la educación en Colón, Panamá"
+            class="rounded-2xl object-cover w-full h-full"
+          />
+          <p class="text-center text-text-tertiary p-2 md:p-4">
+            Imagen de Manuel Urbano Ayarza
+          </p>
+        </div>
+        <div class="flex flex-col gap-2">
+          <Box className="p-4">
+            <h2 class="text-lg font-bold text-text-tertiary">
+              Nuestra historia
+            </h2>
+          </Box>
+
+          <Box className="p-8 md:p-12">
+            <p class="mt-4 text-base md:text-lg leading-relaxed">
+              En <b>1918 la educadora Doña Urbana Herrera</b>, conjuntamente con
+              las autoridades de la comunidad de <b>Cativá</b>, lucharon
+              incansablemente para que se construyera la primera escuela en este
+              área.
+            </p>
+            <p class="mt-4 text-base md:text-lg leading-relaxed">
+              La misma fue edificada de madera en el sector poblado denominado <b
+                >Altos de Cativá</b
+              >, cerca de la <b>carretera transístmica</b> y recibió, en ese entonces,
+              el nombre de <b>Escuela de Cativá</b>.
+            </p>
+            <p class="mt-4 text-base md:text-lg leading-relaxed">
+              La labor docente se inicia con una matrícula de <b
+                >veintiséis (26) alumnos</b
+              >. La comunidad en sus inicios consistía en una pequeña población
+              rural; más tarde, con la <b
+                >inauguración de la carretera transístmica el 15 de abril de
+                1943</b
+              > por el entonces <b
+                >Presidente Don Ricardo Adolfo de la Guardia</b
+              >, se abren nuevos campos y horizontes al pequeño poblado.
+            </p>
+            <p class="mt-4 text-base md:text-lg leading-relaxed">
+              Este fue creciendo y haciendo acopio de todas las facilidades,
+              logrando convertirse en un <b
+                >centro comunitario de gran porvenir</b
+              >.
+            </p>
+            <p class="mt-4 text-base md:text-lg leading-relaxed">
+              Durante los años de <b>1935-1943</b> el <b>Banco Nacional</b> financió
+              la construcción de un edificio en Cativá, a fin de instalar una <b
+                >fábrica de mosaico</b
+              > en el sitio donde se encontraba la escuela, siendo trasladada a la
+              parte frontal.
+            </p>
+          </Box>
+        </div>
+      </div>
+
+      <div>
+        <Box className="rounded-2xl p-8 md:p-12">
+          <p class="mt-4 text-base md:text-lg leading-relaxed">
+            En el año de <b>1945</b> el <b>Ministerio de Educación</b> alquila dicha
+            propiedad por la suma de <b>B/.175.00 mensuales</b>, con el fin de
+            mantener la escuela en ese lugar y brindar los servicios educativos
+            a la niñez de la comunidad.
+          </p>
+          <p class="mt-4 text-base md:text-lg leading-relaxed">
+            Sin embargo, no fue sino hasta el año <b>1975</b>, cuando el <b
+              >gobierno revolucionario entonces liderado por el General Omar
+              Torrijos Herrera</b
+            >, construyó la nueva escuela con todas las <b
+              >comodidades pedagógicas e higiénicas</b
+            >, ya que la anterior estaba deteriorada y no cumplía con el espacio
+            físico adecuado.
+          </p>
+          <p class="mt-4 text-base md:text-lg leading-relaxed">
+            Esta nueva estructura fue edificada en el <b
+              >centro de la comunidad</b
+            >. En vista de que los <b>estudiantes egresados de sexto grado</b> han
+            tenido que asistir a otros centros apartados, lo cual afecta el tiempo
+            y la economía de la familia cativaleña, la comunidad educativa, observando
+            esta problemática, comenzó a gestionar con varios gobiernos la creación
+            de la <b>Básica General</b>.
+          </p>
+          <p class="mt-4 text-base md:text-lg leading-relaxed">
+            No fue hasta el año <b>2011</b> cuando se cumplió este proyecto, estando
+            en turno el <b>presidente Ricardo Martinelli</b>.
+          </p>
+        </Box>
+      </div>
+    </article>
+  </section>
+</BaseLayout>

@@ -1,0 +1,18 @@
+---
+
+interface Props{
+    className?: string;
+}
+
+const {className}  = Astro.props
+
+var classNameInternal = className ? className : "";
+
+if(classNameInternal.includes("rounded-") != true){
+   classNameInternal = "rounded-2xl " + className;
+}
+---
+
+<div class={classNameInternal} style="background-color: rgba(255,222,89,0.06); border: 1px solid rgba(255,222,89,0.14);" >
+    <slot />
+</div>
