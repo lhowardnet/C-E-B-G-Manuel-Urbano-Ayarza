@@ -140,7 +140,7 @@ export default function NavbarMenu(props: NavbarMenuProps) {
      
 
   return (
-    <div ref={menuContainer} className="flex justify-end w-full lg:w-auto gap-x-[10px] h-[calc(100dvh-var(--size-navbar-height))] lg:h-auto bg-background lg:bg-transparent lg:static absolute top-[var(--size-navbar-height)] left-0 lg:top-0 lg:left-0 z-50 lg:z-auto px-[10px] lg:px-0 py-[10px] lg:py-0 shadow-lg lg:shadow-none">
+    <div ref={menuContainer} className="flex justify-end w-full lg:w-auto gap-x-[10px] h-[calc(100dvh-var(--size-navbar-height))] lg:h-auto bg-primary lg:bg-transparent lg:static absolute top-[var(--size-navbar-height)] left-0 lg:top-0 lg:left-0 z-50 lg:z-auto px-[10px] lg:px-0 py-[10px] lg:py-0 shadow-lg lg:shadow-none">
       <ul ref={menu}  className="hidden lg:flex lg:flex-row justify-start lg:w-auto lg:justify-end w-full gap-[10px]">
         <li className="w-full lg:w-auto">
           <a onClick={linkClickHandler} className={getLinkClasses("/")} href="/">

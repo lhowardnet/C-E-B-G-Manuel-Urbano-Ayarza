@@ -24,7 +24,7 @@ const grados = [
 >
   <section>
     <Hero />
-    <article class="min-h-[calc(100dvh-var(--size-navbar-height))] animate-fade-in fill-both timeline-view animate-range-[15%_50%]">
+    <article class="min-h-[100dvh] animate-fade-in fill-both timeline-view animate-range-[15%_50%]">
       
       <BoxTitle className="bg-primary p-4 sticky top-0 z-1" title="Matrícula Actual" />
         
@@ -98,12 +98,12 @@ const grados = [
       </div>
     </article>
 
-      <article class="min-h-[calc(100dvh-var(--size-navbar-height))] animate-fade-in fill-both timeline-view animate-range-[15%_50%]">
+      <article class="min-h-[100dvh] animate-fade-in fill-both timeline-view animate-range-[15%_50%]">
         
       <BoxTitle className="bg-primary p-4 sticky top-0 z-1" title="Cuerpo Docente" />
 
       <div class="grid grid-cols-1 gap-3 py-4 md:py-8 lg:grid-cols-2">
-        <div>
+        <div class="order-2 lg:order-1">
           <div class="flex flex-col gap-2 w-full">
             <Box className="p-4 md:p-8 w-48 text-center w-full">
               <p class="text-3xl font-bold text-text-primary">25</p>
@@ -161,7 +161,7 @@ const grados = [
             </Box>
           </div>
         </div>
-        <div class="hidden lg:flex">
+        <div class="flex order-1 lg:order-2">
             <img
           src="/logos/docentes.png"
           class="mask-b-from-10% mask-b-to-90%"
