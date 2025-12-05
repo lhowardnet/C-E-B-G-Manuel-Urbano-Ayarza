@@ -14,7 +14,7 @@
 @layer base{
     *{
         font-family: sans-serif;
-        color: var(--color-text-primary);
+        color: var(--color-white);
     } 
 
     html, body {
@@ -73,31 +73,12 @@
             transform: translateX(var(--animate-menu-toggle-position));
         }
     }
-
-    @keyframes animate-fade-out {
-        to {
-            opacity: 0;
-        }
-    }
-
-    @keyframes animate-fade-in {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
-    }
 }
 
 @theme{
     --font-bernoru: 'Bernoru', sans-serif;
-    --color-background: #0c5192;
-    --color-text-primary: #ffffff;
-    --color-text-secondary: #0c5192;
-    --color-text-tertiary: #ffde59;
-    --color-primary: #ffde59;
+    --color-primary: #0c5192;
+    --color-secondary:#ffde59;
     --color-transparent: transparent;
     --size-navbar-height: 64px;
     --animate-menu-toggle: menu-toggle 3s forwards ease-in-out;
@@ -111,26 +92,3 @@
     
     height: var(--size-navbar-height);
 } 
-
-@utility animation-scroll-fade-out {
-    animation: animate-fade-out; 
-    animation-fill-mode: both;
-}
-
-@utility animation-scroll-fade-in {
-    animation: animate-fade-in; 
-    animation-fill-mode: both;
-}
-
- 
-@utility animation-timeline-x{
-    animation-timeline: scroll(root block);
-} 
-
-@utility animation-timeline-range-0-50{
-    animation-range: 0% 50%;
-} 
-
-@utility animation-timeline-range-50-100{
-    animation-range: 50% 100%;
-}

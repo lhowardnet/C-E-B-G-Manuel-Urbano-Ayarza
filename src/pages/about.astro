@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Box from "../components/Box.astro";
+import BoxTitle from "../components/BoxTitle.astro";
 ---
 
 <BaseLayout 
@@ -15,11 +16,7 @@ import Box from "../components/Box.astro";
         <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-8">
 
             <div class="flex flex-col gap-2">
-                <Box className="p-4">
-                    <h2 class="text-lg font-bold text-text-tertiary">
-                    Misión
-                    </h2>
-                </Box>
+                <BoxTitle className="p-4" title="Misión" />
                 <Box className="p-8">
                     <p class="mt-4 text-base md:text-lg leading-relaxed">
                     Nos visualizamos como una institución abierta, actualizada y de vanguardia que sirve de referencia positiva para la comunidad educativa nacional. Que articule los elementos propios de una organización integrada y democrática basada en el apoyo, el respeto y el aprovechamiento de las diferencias para lograr fines comunes.
@@ -29,12 +26,7 @@ import Box from "../components/Box.astro";
             </div>
 
             <div class="flex flex-col gap-2">
-                <Box className="p-4">
-                    <h2 class="text-lg font-bold text-text-tertiary">
-                      Visión
-                    </h2>
-                </Box>
-
+                <BoxTitle className="p-4" title="Visión" />
                 <Box className="p-8 h-full">
                     <p class="mt-4 text-base md:text-lg leading-relaxed">
                       Formar a nuestros estudiantes a que asuman actitudes y valores fundamentales, que adquiera conocimientos y desarrollen habilidades que le permita prepararse para enfrentar la vida, con espíritu creativo, emprendedor, dinámico y positivo para, de ese modo tomar decisiones sustentables en el tiempo, a fin de responder a una sociedad cambiante y proyectarse a un futuro con un proyecto de vida personal útil a la sociedad y acorde a sus intereses.
@@ -53,17 +45,12 @@ import Box from "../components/Box.astro";
             alt="Manuel Urbano Ayarza - Personaje histórico de la educación en Colón, Panamá"
             class="rounded-2xl object-cover w-full h-full"
           />
-          <p class="text-center text-text-tertiary p-2 md:p-4">
+          <p class="text-center text-secondary p-2 md:p-4">
             Imagen de Manuel Urbano Ayarza
           </p>
         </div>
         <div class="flex flex-col gap-2">
-          <Box className="p-4">
-            <h2 class="text-lg font-bold text-text-tertiary">
-              Nuestra historia
-            </h2>
-          </Box>
-
+          <BoxTitle className="p-4" title="Nuestra historia" />
           <Box className="p-8 md:p-12">
             <p class="mt-4 text-base md:text-lg leading-relaxed">
               En <b>1918 la educadora Doña Urbana Herrera</b>, conjuntamente con

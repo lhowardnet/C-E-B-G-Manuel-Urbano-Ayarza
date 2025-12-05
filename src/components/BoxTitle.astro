@@ -1,0 +1,15 @@
+---
+import Box from "./Box.astro"
+
+interface props{
+ className?: string
+ title: string
+} 
+
+const {title, className} = Astro.props
+
+--- 
+
+<Box className={className}>
+    <h2 class="text-lg font-bold text-secondary">{title}</h2>
+</Box>

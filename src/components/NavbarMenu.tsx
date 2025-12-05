@@ -65,13 +65,13 @@ export default function NavbarMenu(props: NavbarMenuProps) {
         const getLinkClasses = (path: string): string => {
           const baseClasses =
           "rounded-xl p-2 min-w-auto lg:min-w-[130px] max-w-auto lg:max-w-[130px] w-full lg:w-[130px] flex justify-center items-center font-bold transition duration-150 hover:animate-menu-link-hover";
-          const hoverClasses = "hover:bg-primary hover:text-text-secondary";
+          const hoverClasses = "hover:bg-secondary hover:text-primary";
 
           // Aplica estilos 'activos' si la ruta coincide
           const activeClasses =
           currentPath === path
-                  ? "bg-primary text-text-secondary"
-                  : "text-text-primary";
+                  ? "bg-secondary text-primary"
+                  : "text-white";
 
           return `${baseClasses} ${hoverClasses} ${activeClasses}`;
 

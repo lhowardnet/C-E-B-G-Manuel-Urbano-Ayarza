@@ -4,15 +4,24 @@ interface Props{
     className?: string;
 }
 
-const {className}  = Astro.props
+const {className}  = Astro.props 
+
 
 var classNameInternal = className ? className : "";
 
-if(classNameInternal.includes("rounded-") != true){
-   classNameInternal = "rounded-2xl " + className;
+classNameInternal = "border border-secondary/5 " + className;
+
+// si no se espesifica color de fondo, se le asigna uno por defecto
+if(classNameInternal.includes("bg-") != true){
+   classNameInternal = "bg-black/2 " + classNameInternal;
 }
+
+// Si no se especifica tamaño de borde redondeado, se le asigna uno por defecto
+if(classNameInternal.includes("rounded-") != true){
+   classNameInternal = "rounded-2xl " + classNameInternal;
+} 
 ---
 
-<div class={classNameInternal} style="background-color: rgba(255,222,89,0.06); border: 1px solid rgba(255,222,89,0.14);" >
+<div class={classNameInternal} >
     <slot />
 </div>

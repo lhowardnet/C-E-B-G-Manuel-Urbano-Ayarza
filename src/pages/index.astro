@@ -2,6 +2,20 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import Box from "../components/Box.astro";
+import BoxTitle from "../components/BoxTitle.astro";
+
+const grados = [
+  { grado : "Kinder",   estudiantes: 20 },
+  { grado: "1er Grado", estudiantes: 30 },
+  { grado: "2do Grado", estudiantes: 28 },
+  { grado: "3er Grado", estudiantes: 32 },
+  { grado: "4to Grado", estudiantes: 27 },
+  { grado: "5to Grado", estudiantes: 29 },
+  { grado: "6to Grado", estudiantes: 31 },
+  { grado: "7mo Grado", estudiantes: 26 },
+  { grado: "8vo Grado", estudiantes: 25 },
+  { grado: "9no Grado", estudiantes: 22 },
+];
 ---
 
 <BaseLayout 
@@ -10,27 +24,146 @@ import Box from "../components/Box.astro";
 >
   <section>
     <Hero />
-    <article class="min-h-[100dvh] pt-[calc(var(--size-navbar-height)+10px)] animation-scroll-fade-in animation-timeline-x animation-timeline-range-50-100">
-      <Box className="p-4">
-        <h2 class="text-lg font-bold text-text-tertiary">Matrícula Actual</h2>
-      </Box>
+    <article class="min-h-[calc(100dvh-var(--size-navbar-height))] animate-fade-in fill-both timeline-view animate-range-[15%_50%]">
+      
+      <BoxTitle className="bg-primary p-4 sticky top-0 z-1" title="Matrícula Actual" />
+        
       <div class="grid grid-cols-1 gap-3 py-4 md:py-8 lg:grid-cols-2">
-        <div>
-          <div class="flex gap-2">
-            <Box className="p-4 md:p-8 w-48 text-center">
+        <div class="order-2">
+          <div class="flex flex-col gap-2 w-full">
+            <Box className="p-4 md:p-8 w-48 text-center w-full">
               <p class="text-3xl font-bold text-text-primary">350</p>
               <p class="text-text-tertiary">Estudiantes</p>
-            </Box>
-
-            <Box className="p-4 md:p-8 w-48 text-center">
-              <p class="text-3xl font-bold text-text-primary">25</p>
-              <p class="text-text-tertiary">Docentes</p>
+              <hr>
+              <table class="w-full border">
+                <thead>
+                  <tr class="border">
+                    <th>
+                      <p class="text-text-tertiary">Matutino</p>
+                    </th>
+                    <th>
+                      <p class="text-text-tertiary">Vespertino</p>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border"> 
+                    <td>
+                      <table class="w-full border">
+                        <thead>
+                          <tr class="border">
+                            <th class="text-text-tertiary">Grado</th>
+                            <th class="text-text-tertiary">Estudiantes</th>
+                          </tr>
+                          <tbody>
+                            {grados.map(({ grado, estudiantes }) => (
+                              <tr>
+                                <td>{grado}</td>
+                                <td>{estudiantes}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                      </table>  
+                    </td>
+                       <td>
+                      <table class="w-full border">
+                        <thead>
+                          <tr class="border">
+                            <th class="text-text-tertiary">Grado</th>
+                            <th class="text-text-tertiary">Estudiantes</th>
+                          </tr>
+                          <tbody>
+                            {grados.map(({ grado, estudiantes }) => (
+                              <tr>
+                                <td>{grado}</td>
+                                <td>{estudiantes}</td>
+                              </tr>
+                            ))}
+                      </table>  
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </Box>
           </div>
         </div>
-        <div class="flex">
+        <div class="flex order-1">
             <img
-          src="/logos/escuela.png"
+          src="/logos/escuela2.png"
+          class="mask-b-from-5% mask-b-to-95% w-full h-auto"
+          alt="Institución educativa Manuel Urbano Ayarza - Colón, Panamá"
+        />
+        </div>
+        
+      </div>
+    </article>
+
+      <article class="min-h-[calc(100dvh-var(--size-navbar-height))] animate-fade-in fill-both timeline-view animate-range-[15%_50%]">
+        
+      <BoxTitle className="bg-primary p-4 sticky top-0 z-1" title="Cuerpo Docente" />
+
+      <div class="grid grid-cols-1 gap-3 py-4 md:py-8 lg:grid-cols-2">
+        <div>
+          <div class="flex flex-col gap-2 w-full">
+            <Box className="p-4 md:p-8 w-48 text-center w-full">
+              <p class="text-3xl font-bold text-text-primary">25</p>
+              <p class="text-text-tertiary">Docentes</p>
+              <hr>
+              <table class="w-full border">
+                <thead>
+                  <tr class="border">
+                    <th>
+                      <p class="text-text-tertiary">Matutino</p>
+                    </th>
+                    <th>
+                      <p class="text-text-tertiary">Vespertino</p>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border"> 
+                    <td>
+                      <table class="w-full border">
+                        <thead>
+                          <tr class="border">
+                            <th class="text-text-tertiary">Grado</th>
+                            <th class="text-text-tertiary">Docentes</th>
+                          </tr>
+                          <tbody>
+                            {grados.map(({ grado, estudiantes }) => (
+                              <tr>
+                                <td>{grado}</td>
+                                <td>{estudiantes}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                      </table>  
+                    </td>
+                       <td>
+                      <table class="w-full border">
+                        <thead>
+                          <tr class="border">
+                            <th class="text-text-tertiary">Grado</th>
+                            <th class="text-text-tertiary">Docentes</th>
+                          </tr>
+                          <tbody>
+                            {grados.map(({ grado, estudiantes }) => (
+                              <tr>
+                                <td>{grado}</td>
+                                <td>{estudiantes}</td>
+                              </tr>
+                            ))}
+                      </table>  
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </Box>
+          </div>
+        </div>
+        <div class="hidden lg:flex">
+            <img
+          src="/logos/docentes.png"
           class="mask-b-from-10% mask-b-to-90%"
           alt="Institución educativa Manuel Urbano Ayarza - Colón, Panamá"
           class="rounded-2xl object-fit w-full h-auto"

@@ -18,7 +18,7 @@ export default function Navbar(props: NavbarProps) {
       <nav className="h-navbar w-full">
         <div className="flex items-center h-full justify-between">
           <img
-            className="h-auto w-[20%] min-w-[200px]"
+            className="h-auto w-[20%] min-w-[200px] animate-fade-out fill-both timeline-scroll animate-range-[0%_50%]"
             src="/logos/logo-gobierno.png"
             alt="Logo Gobierno"
           />
