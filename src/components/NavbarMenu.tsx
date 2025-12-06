@@ -79,6 +79,11 @@ export default function NavbarMenu(props: NavbarMenuProps) {
 
         const onResize = (size: number)=> {
 
+          if(windowWidth === size){
+            setWindowWidth(size);
+            return;
+          }
+          
           setWindowWidth(size);
 
          if(size <= 1024){

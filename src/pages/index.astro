@@ -3,18 +3,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import Box from "../components/Box.astro";
 import BoxTitle from "../components/BoxTitle.astro";
+import { Icon } from "astro-icon/components";
 
 const grados = [
-  { grado : "Kinder",   estudiantes: 20 },
-  { grado: "1er Grado", estudiantes: 30 },
-  { grado: "2do Grado", estudiantes: 28 },
-  { grado: "3er Grado", estudiantes: 32 },
-  { grado: "4to Grado", estudiantes: 27 },
-  { grado: "5to Grado", estudiantes: 29 },
-  { grado: "6to Grado", estudiantes: 31 },
-  { grado: "7mo Grado", estudiantes: 26 },
-  { grado: "8vo Grado", estudiantes: 25 },
-  { grado: "9no Grado", estudiantes: 22 },
+  { grado: "Kinder", estudiantes: 20, icon: "lucide:smile" },
+  { grado: "1er Grado", estudiantes: 30, icon: "lucide:pen-tool" },
+  { grado: "2do Grado", estudiantes: 28, icon: "lucide:edit" },
+  { grado: "3er Grado", estudiantes: 32, icon: "lucide:graduation-cap" },
+  { grado: "4to Grado", estudiantes: 27, icon: "lucide:book-open" },
+  { grado: "5to Grado", estudiantes: 29, icon: "lucide:calculator" },
+  { grado: "6to Grado", estudiantes: 31, icon: "lucide:atom" },
+  { grado: "7mo Grado", estudiantes: 26, icon: "lucide:microscope" },
+  { grado: "8vo Grado", estudiantes: 25, icon: "lucide:ruler" },
+  { grado: "9no Grado", estudiantes: 22, icon: "lucide:school" },
 ];
 ---
 
@@ -26,7 +27,9 @@ const grados = [
     <Hero />
     <article class="min-h-[100dvh] animate-fade-in fill-both timeline-view animate-range-[15%_50%]">
       
-      <BoxTitle className="bg-primary p-4 sticky top-0 z-1" title="Matrícula Actual" />
+      <BoxTitle className="bg-primary p-4 sticky top-0 z-1" title="Matrícula Actual">
+        <Icon name="lucide:graduation-cap" class="w-6 h-6" slot="icon"/>
+      </BoxTitle>
         
       <div class="grid grid-cols-1 gap-3 py-4 md:py-8 lg:grid-cols-2">
         <div class="order-2">
@@ -100,18 +103,25 @@ const grados = [
 
       <article class="min-h-[100dvh] animate-fade-in fill-both timeline-view animate-range-[15%_50%]">
         
-      <BoxTitle className="bg-primary p-4 sticky top-0 z-1" title="Cuerpo Docente" />
+      <BoxTitle className="bg-primary p-4 sticky top-0 z-1" title="Cuerpo Docente">
+        <Icon name="lucide:users-round" class="w-6 h-6" slot="icon"/>
+      </BoxTitle>
 
       <div class="grid grid-cols-1 gap-3 py-4 md:py-8 lg:grid-cols-2">
         <div class="order-2 lg:order-1">
           <div class="flex flex-col gap-2 w-full">
-            <Box className="p-4 md:p-8 w-48 text-center w-full">
-              <p class="text-3xl font-bold text-text-primary">25</p>
-              <p class="text-text-tertiary">Docentes</p>
-              <hr>
-              <table class="w-full border">
+            <Box className="p-4 md:p-8 w-48 text-center w-full flex flex-col gap-4">
+              <div>
+                <div class="flex flex-row justify-center gap-4">
+                  <Icon name="lucide:users-round" class="w-10 h-auto"/>
+                  <p class="text-3xl font-bold text-white">25</p>
+                </div>
+                <p class="text-secondary">Docentes</p>
+              </div>
+              <hr class="border-secondary border-1"/>
+              <table class="w-full border border-spacing-4">
                 <thead>
-                  <tr class="border">
+                  <tr class="border-b border-secondary">
                     <th>
                       <p class="text-text-tertiary">Matutino</p>
                     </th>
@@ -121,36 +131,36 @@ const grados = [
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="border"> 
+                  <tr> 
                     <td>
-                      <table class="w-full border">
+                      <table class="w-full border-separate border-spacing-2">
                         <thead>
-                          <tr class="border">
+                          <tr class="border-b border-secondary">
                             <th class="text-text-tertiary">Grado</th>
                             <th class="text-text-tertiary">Docentes</th>
                           </tr>
                           <tbody>
-                            {grados.map(({ grado, estudiantes }) => (
-                              <tr>
-                                <td>{grado}</td>
-                                <td>{estudiantes}</td>
+                             {grados.map(({ grado, estudiantes, icon }) => (
+                              <tr class="border-r border-secondary">
+                                <td><Icon name={icon} class="w-4 h-4 inline-block mr-1"/> {grado}</td>
+                                <td class="text-secondary">{estudiantes}</td>
                               </tr>
                             ))}
                           </tbody>
                       </table>  
                     </td>
                        <td>
-                      <table class="w-full border">
+                      <table class="w-full border-separate border-spacing-2">
                         <thead>
-                          <tr class="border">
+                          <tr class="border-b border-secondary">
                             <th class="text-text-tertiary">Grado</th>
                             <th class="text-text-tertiary">Docentes</th>
                           </tr>
                           <tbody>
-                            {grados.map(({ grado, estudiantes }) => (
+                            {grados.map(({ grado, estudiantes, icon }) => (
                               <tr>
-                                <td>{grado}</td>
-                                <td>{estudiantes}</td>
+                                <td><Icon name={icon} class="w-4 h-4 inline-block mr-1"/> {grado}</td>
+                                <td class="text-secondary">{estudiantes}</td>
                               </tr>
                             ))}
                       </table>  

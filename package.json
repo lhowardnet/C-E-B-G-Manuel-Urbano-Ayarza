@@ -16,8 +16,12 @@
     "@types/react": "^19.2.6",
     "@types/react-dom": "^19.2.3",
     "astro": "^5.15.8",
+    "astro-icon": "^1.1.5",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "tailwindcss": "^4.1.17"
+  },
+  "devDependencies": {
+    "@iconify-json/lucide": "^1.2.79"
   }
 }

@@ -11,5 +11,8 @@ const {title, className} = Astro.props
 --- 
 
 <Box className={className}>
-    <h2 class="text-lg font-bold text-secondary">{title}</h2>
+    <div class="flex gap-2 w-full">
+        <slot name="icon" />
+        <h2 class="text-lg font-bold text-secondary">{title}</h2>
+    </div>
 </Box>
