@@ -14,11 +14,11 @@ export default function Navbar(props: NavbarProps) {
   }
 
   return (
-    <header className="sticky top-0 z-1">
+    <header className="sticky top-0 z-1 mx-auto max-w-7xl">
       <nav className="h-navbar w-full">
         <div className="flex items-center h-full justify-between">
           <img
-            className="h-auto w-[20%] min-w-[200px] animate-fade-out fill-both timeline-scroll animate-range-[0%_50%]"
+            className="h-auto w-[20%] min-w-[200px] animate-fade-out fill-both timeline-scroll animate-range-[0%_15%]"
             src="/logos/logo-gobierno.png"
             alt="Logo Gobierno"
           />

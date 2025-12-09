@@ -3,6 +3,7 @@ import { ClientRouter, fade, slide } from 'astro:transitions';
 import Navbar from '../components/Navbar.tsx';
 import StructuredData from '../components/StructuredData.astro';
 import '../styles/global.css'; 
+import Footer from '../components/Footer.astro';
 
 const { 
 	title, 
@@ -45,10 +46,11 @@ const {
 		
         <ClientRouter />
 	</head>
-	<body class="px-[8px] xl:px-[0px] mx-auto mx-auto max-w-7xl">
+	<body>
         <Navbar transition:persist client:load />
-        <main transition:animate="fade">
+        <main class="px-[8px] xl:px-[0px] mx-auto max-w-7xl" transition:animate="fade">
             <slot/>
         </main>
+		<Footer transition:persist />
 	</body>
 </html>
