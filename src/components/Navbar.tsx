@@ -14,7 +14,7 @@ export default function Navbar(props: NavbarProps) {
   }
 
   return (
-    <header className="sticky top-0 z-1 mx-auto max-w-7xl">
+    <header className="sticky top-0 z-1 mx-auto max-w-6xl">
       <nav className="h-navbar w-full">
         <div className="flex items-center h-full justify-between">
           <img
