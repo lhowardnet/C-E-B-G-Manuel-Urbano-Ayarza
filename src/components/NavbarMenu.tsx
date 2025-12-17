@@ -10,6 +10,8 @@ export default function NavbarMenu(props: NavbarMenuProps) {
 
       const cancelResize = useRef<NodeJS.Timeout | null>(null);
       const menuContainer = useRef<HTMLDivElement | null>(null);
+      const body = useRef<HTMLBodyElement | null>(null);
+      const html = useRef<HTMLHtmlElement | null>(null);
       const menu  = useRef<HTMLUListElement | null>(null); 
       const anchors = useRef<HTMLAnchorElement[]>([]);
 
@@ -23,8 +25,11 @@ export default function NavbarMenu(props: NavbarMenuProps) {
 
         useEffect(() => {
 
-          
+          body.current = window.document.querySelector("body");
+          html.current = window.document.querySelector("html");
+
           anchors.current = Array.from(menu.current.querySelectorAll("a"));
+
 
           const handlePageLoad = ()=> setCurrentPath(window.location.pathname);
           document.addEventListener("astro:page-load", handlePageLoad);
@@ -96,7 +101,10 @@ export default function NavbarMenu(props: NavbarMenuProps) {
             menuContainer.current.classList.remove("hidden");
             menuContainer.current.classList.add("flex");
             setIsOpen(true);
-         }
+         } 
+
+          body.current.style.overflow = 'auto';
+          html.current.style.overflow = 'auto';
           
         };
 
@@ -111,6 +119,9 @@ export default function NavbarMenu(props: NavbarMenuProps) {
             menu.current.classList.add("hidden");
             menu.current.classList.remove("flex-col");
             menu.current.classList.remove("flex");
+
+            body.current.style.overflow = 'auto';
+            html.current.style.overflow = 'auto';
             
           }
           else{
@@ -121,7 +132,11 @@ export default function NavbarMenu(props: NavbarMenuProps) {
 
              menu.current.classList.remove("hidden");
              menu.current.classList.add("flex-col");
-             menu.current.classList.add("flex");
+             menu.current.classList.add("flex"); 
+
+             body.current.style.overflow = 'hidden';
+             html.current.style.overflow = 'hidden';
+
           }
         } 
 
