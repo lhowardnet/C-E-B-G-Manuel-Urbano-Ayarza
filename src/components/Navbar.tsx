@@ -19,7 +19,7 @@ export default function Navbar(props: NavbarProps) {
         <div className="flex items-center h-full justify-between">
           <img
             className="h-auto w-[20%] min-w-[200px] animate-fade-out fill-both timeline-scroll animate-range-[0%_15%]"
-            src="/logos/logo-gobierno.png"
+            src="/logos/logo-gobierno.webp"
             alt="Logo Gobierno"
           />
           <NavbarMenu IsOpen={isOpen} />
