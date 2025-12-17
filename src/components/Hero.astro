@@ -17,7 +17,12 @@
         </a>
     </div>
     <div class="hidden lg:flex w-full h-full items-center justify-end order-1 lg:order-2">
-        <div class="circle shadow-xl/20">
+        <div class="circle shadow-xl/20"> 
+            <img 
+            loading="eager"
+            fetchpriority="high"
+            decoding="sync"
+            src="/public/logos/logo.webp">
         </div>
     </div>
   </div>
@@ -35,12 +40,11 @@
         justify-content: center;
     }
 
-    .circle::after{
+    .circle>img{
         content: "";
         width: 100%;
         height: 100%;
         border-radius: 50%;
-        background-image: url(/logos/logo.webp);
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
