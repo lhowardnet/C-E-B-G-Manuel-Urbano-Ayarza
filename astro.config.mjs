@@ -8,7 +8,7 @@ import icon from 'astro-icon'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://manuelubanayarza.pa',
+  site: 'https://escuela-manuel-urbano-ayarza.com',
   vite: {
     plugins: [tailwindcss()]
   },
