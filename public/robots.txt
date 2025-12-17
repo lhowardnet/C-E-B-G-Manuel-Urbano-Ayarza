@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
-Sitemap: https://manuelubanayarza.pa/sitemap.xml
+Sitemap: https://escuela-manuel-urbano-ayarza.com/sitemap.xml
