@@ -93,7 +93,7 @@ export default function InstagramCarousel() {
               stretch: 0,
               depth: 100,
               modifier: 1,
-              slideShadows: false,
+              slideShadows: true,
             }}
             pagination={{
               clickable: true,
@@ -125,7 +125,7 @@ export default function InstagramCarousel() {
             >
 
               {/* Imagen/Thumbnail */}
-              <div className="relative h-96 overflow-hidden">
+              <div className="relative h-96 overflow-hidden bg-gray-900">
                 <img
                   src={post.sizes.large.mediaUrl}
                   alt={post.caption || "Instagram post"}
@@ -134,7 +134,7 @@ export default function InstagramCarousel() {
                 />
 
                 {/* Overlay oscuro en hover */}
-                <div className="absolute inset-0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
                   {/* Play button para videos */}
                   {post.mediaType === "VIDEO" && (
                     <svg
@@ -149,9 +149,9 @@ export default function InstagramCarousel() {
               </div>
 
               {/* Info card */}
-              <div className="relative bg-secondary p-6 text-primary rounded-xl">
+              <div className="relative bg-secondary p-6 text-primary">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-primary/80">
+                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-primary/80 backdrop-blur">
                     <svg
                       className="w-4 h-4"
                       fill="currentColor"
@@ -172,7 +172,7 @@ export default function InstagramCarousel() {
 
                 {post.caption && (
                   <>
-                  <hr className="bg-primary my-2"/>
+                  <hr className="bg-primary"/>
                   <p className="text-sm line-clamp-2 mb-3 text-primary">
                     {post.caption}
                   </p>
