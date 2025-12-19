@@ -1,5 +1,5 @@
 import NavbarMenu from "./NavbarMenu.tsx";
-import { use, useEffect, useState } from "react";
+import { useState } from "react";
 
 interface NavbarProps {
   IsOpen?: boolean;

@@ -20,6 +20,7 @@ export default function NavbarMenu(props: NavbarMenuProps) {
       const [windowWidth, setWindowWidth] = useState<number>(0);
       const [currentPath,setCurrentPath] = useState("/");
       const [isOpen, setIsOpen] = useState(props.IsOpen);
+      const [isMenuVisible, setIsMenuVisible] = useState(false);
       
  // -----------------------------------------------Efectos-----------------------------------------------
 
@@ -34,7 +35,9 @@ export default function NavbarMenu(props: NavbarMenuProps) {
           const handlePageLoad = ()=> setCurrentPath(window.location.pathname);
           document.addEventListener("astro:page-load", handlePageLoad);
 
-          setWindowWidth(window.innerWidth);
+          const initialWidth = window.innerWidth;
+          setWindowWidth(initialWidth);
+          setIsMenuVisible(initialWidth > 1024);
 
           const handleResize = ()=> {
 
@@ -85,21 +88,18 @@ export default function NavbarMenu(props: NavbarMenuProps) {
         const onResize = (size: number)=> {
 
           if(windowWidth === size){
-            setWindowWidth(size);
             return;
           }
           
           setWindowWidth(size);
 
          if(size <= 1024){
-           menuContainer.current.classList.remove("flex");
-           menuContainer.current.classList.add("hidden");
+           setIsMenuVisible(false);
            setIsOpen(false);
 
          }
          else{
-            menuContainer.current.classList.remove("hidden");
-            menuContainer.current.classList.add("flex");
+            setIsMenuVisible(true);
             setIsOpen(true);
          } 
 
@@ -113,13 +113,7 @@ export default function NavbarMenu(props: NavbarMenuProps) {
           if(isOpen){
 
             //Cerrar menu
-            menuContainer.current.classList.add("hidden"); 
-            menuContainer.current.classList.remove("flex");
-
-            menu.current.classList.add("hidden");
-            menu.current.classList.remove("flex-col");
-            menu.current.classList.remove("flex");
-
+            setIsOpen(false);
             body.current.style.overflow = 'auto';
             html.current.style.overflow = 'auto';
             
@@ -127,15 +121,9 @@ export default function NavbarMenu(props: NavbarMenuProps) {
           else{
 
             //Abrir menu
-            menuContainer.current.classList.remove("hidden"); 
-            menuContainer.current.classList.add("flex");
-
-             menu.current.classList.remove("hidden");
-             menu.current.classList.add("flex-col");
-             menu.current.classList.add("flex"); 
-
-             body.current.style.overflow = 'hidden';
-             html.current.style.overflow = 'hidden';
+            setIsOpen(true);
+            body.current.style.overflow = 'hidden';
+            html.current.style.overflow = 'hidden';
 
           }
         } 
@@ -147,11 +135,11 @@ export default function NavbarMenu(props: NavbarMenuProps) {
            const href = event.currentTarget.getAttribute("href"); 
 
            if(windowWidth <= 1024){
-              menuContainer.current.classList.remove("flex");
-              menuContainer.current.classList.add("hidden");
+              setIsOpen(false);
+              body.current.style.overflow = 'auto';
+              html.current.style.overflow = 'auto';
            }
 
-          setIsOpen(false); 
           setCurrentPath(href);
           navigate(href, {history: "push"});
           
@@ -159,9 +147,19 @@ export default function NavbarMenu(props: NavbarMenuProps) {
         
      
 
+  const menuContainerClasses = `flex justify-end w-full gap-x-[10px] px-[10px] py-[10px] z-50 ${
+    isMenuVisible || isOpen
+      ? "h-[calc(100dvh-var(--size-navbar-height))] bg-primary absolute top-[var(--size-navbar-height)] left-0 shadow-lg"
+      : "hidden"
+  } ${isMenuVisible ? "lg:h-auto lg:w-auto lg:bg-transparent lg:static lg:top-0 lg:left-0 lg:z-auto lg:px-0 lg:py-0 lg:shadow-none" : ""}`;
+
+  const menuClasses = `${
+    isMenuVisible ? "flex lg:flex-row" : "flex-col"
+  } flex justify-start gap-[10px] w-full lg:w-auto lg:justify-end`;
+
   return (
-    <div ref={menuContainer} className="flex justify-end w-full lg:w-auto gap-x-[10px] h-[calc(100dvh-var(--size-navbar-height))] lg:h-auto bg-primary lg:bg-transparent lg:static absolute top-[var(--size-navbar-height)] left-0 lg:top-0 lg:left-0 z-50 lg:z-auto px-[10px] lg:px-0 py-[10px] lg:py-0 shadow-lg lg:shadow-none">
-      <ul ref={menu}  className="hidden lg:flex lg:flex-row justify-start lg:w-auto lg:justify-end w-full gap-[10px]">
+    <div ref={menuContainer} className={menuContainerClasses}>
+      <ul ref={menu} className={menuClasses}>
         <li className="w-full lg:w-auto">
           <a onClick={linkClickHandler} className={getLinkClasses("/")} href="/">
             Inicio
