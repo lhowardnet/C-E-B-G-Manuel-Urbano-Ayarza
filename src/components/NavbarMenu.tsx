@@ -18,7 +18,7 @@ export default function NavbarMenu(props: NavbarMenuProps) {
  // ----------------------------------------------Estados-------------------------------------------------------
  
       const [windowWidth, setWindowWidth] = useState<number>(0);
-      const [currentPath,setCurrentPath] = useState("/");
+      const [currentPath,setCurrentPath] = useState("");
       const [isOpen, setIsOpen] = useState(props.IsOpen);
       const [isMenuVisible, setIsMenuVisible] = useState(false);
       
