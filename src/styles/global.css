@@ -76,8 +76,25 @@
 
             transform: translateX(var(--animate-menu-toggle-position));
         }
+    } 
+
+    @keyframes animate-fade-in {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
-}
+
+    @keyframes animate-fade-out {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
 
 @theme{
     --font-bernoru: 'Bernoru', sans-serif;
