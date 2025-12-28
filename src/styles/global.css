@@ -1,7 +1,7 @@
 @import "tailwindcss"; 
 @plugin '@midudev/tailwind-animations';
 
-@source inline("animate-fade-in");
+@source inline("animate-fade-in animate-fade-out animate-fill-mode-forwards");
 
 
 
