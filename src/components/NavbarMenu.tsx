@@ -103,8 +103,8 @@ export default function NavbarMenu(props: NavbarMenuProps) {
             setIsOpen(true);
          } 
 
-          body.current.style.overflow = 'auto';
-          html.current.style.overflow = 'auto';
+          //body.current.style.overflow = 'auto';
+          //html.current.style.overflow = 'auto';
           
         };
 
@@ -114,16 +114,16 @@ export default function NavbarMenu(props: NavbarMenuProps) {
 
             //Cerrar menu
             setIsOpen(false);
-            body.current.style.overflow = 'auto';
-            html.current.style.overflow = 'auto';
+            //body.current.style.overflow = 'auto';
+            //html.current.style.overflow = 'auto';
             
           }
           else{
 
             //Abrir menu
             setIsOpen(true);
-            body.current.style.overflow = 'hidden';
-            html.current.style.overflow = 'hidden';
+            //body.current.style.overflow = 'hidden';
+            //html.current.style.overflow = 'hidden';
 
           }
         } 
@@ -136,8 +136,8 @@ export default function NavbarMenu(props: NavbarMenuProps) {
 
            if(windowWidth <= 1024){
               setIsOpen(false);
-              body.current.style.overflow = 'auto';
-              html.current.style.overflow = 'auto';
+              //body.current.style.overflow = 'auto';
+              //html.current.style.overflow = 'auto';
            }
 
           setCurrentPath(href);

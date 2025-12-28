@@ -37,7 +37,7 @@ const {
         <ClientRouter />
 	</head>
 	<body>
-        <Navbar transition:persist/>
+        <Navbar transition:persist client:load />
         <main class="px-[8px] xl:px-[0px] mx-auto max-w-6xl" transition:animate="fade">
             <slot/>
         </main>
