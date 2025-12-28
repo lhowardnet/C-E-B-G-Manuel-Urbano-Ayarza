@@ -93,38 +93,31 @@ export default function NavbarMenu(props: NavbarMenuProps) {
           
           setWindowWidth(size);
 
+        // Para pantallas pequeñas, ocultar el menú y cerrarlo
          if(size <= 1024){
            setIsMenuVisible(false);
            setIsOpen(false);
-
+           activeScroll();
          }
-         else{
+         else{ 
+            // Para pantallas grandes, mostrar el menú y abrirlo
             setIsMenuVisible(true);
             setIsOpen(true);
          } 
-
-          //body.current.style.overflow = 'auto';
-          //html.current.style.overflow = 'auto';
-          
         };
 
         const navigationToggleClickHandler = ()=>{
 
           if(isOpen){
-
             //Cerrar menu
             setIsOpen(false);
-            //body.current.style.overflow = 'auto';
-            //html.current.style.overflow = 'auto';
+            activeScroll();
             
           }
           else{
-
             //Abrir menu
             setIsOpen(true);
-            //body.current.style.overflow = 'hidden';
-            //html.current.style.overflow = 'hidden';
-
+            disableScroll();
           }
         } 
 
@@ -136,13 +129,22 @@ export default function NavbarMenu(props: NavbarMenuProps) {
 
            if(windowWidth <= 1024){
               setIsOpen(false);
-              //body.current.style.overflow = 'auto';
-              //html.current.style.overflow = 'auto';
+              activeScroll();
            }
 
           setCurrentPath(href);
           navigate(href, {history: "push"});
           
+        }
+
+        const activeScroll = ()=>{
+              body.current.style.overflow = 'auto';
+              html.current.style.overflow = 'auto';
+        }
+
+        const disableScroll = ()=>{
+              body.current.style.overflow = 'hidden';
+              html.current.style.overflow = 'hidden';
         }
         
      
