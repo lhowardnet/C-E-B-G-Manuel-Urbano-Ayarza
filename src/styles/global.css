@@ -1,6 +1,9 @@
 @import "tailwindcss"; 
 @plugin '@midudev/tailwind-animations';
 
+@source inline("animate-fade-in");
+
+
 
 @font-face{
     font-family: 'Bernoru';
