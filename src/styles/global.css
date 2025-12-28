@@ -1,6 +1,4 @@
 @import "tailwindcss"; 
-@source inline("animate-fade-in animate-fade-out animate-fill-mode-forwards");
-
 @plugin '@midudev/tailwind-animations';
 
 
@@ -78,23 +76,27 @@
         }
     } 
 
-    @keyframes animate-fade-in {
-        0% {
-            opacity: 0;
-        }
-        100% {
+    @keyframes animate-fade-out {
+        0%{
             opacity: 1;
+        }
+        100%{
+            opacity: 0;
         }
     }
 
-    @keyframes animate-fade-out {
-        0% {
-            opacity: 1;
-        }
-        100% {
+    @keyframes animate-fade-in {
+        0%{
             opacity: 0;
         }
+        100%{
+            opacity: 1;
+        }
+    
+    
     }
+
+}
 
 @theme{
     --font-bernoru: 'Bernoru', sans-serif;
