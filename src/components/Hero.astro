@@ -1,7 +1,12 @@
 <header class="w-full h-[calc(100dvh-var(--size-navbar-height))] animate-fade-out animate-fill-mode-forwards timeline-scroll animate-range-[0%_50%]">
-  <div class="grid grid-cols-1 lg:grid-cols-2 h-full">
+  <div class= "animate-fade-out animate-fill-mode-forwards timeline-scroll animate-range-[0%_25%] bg-[url('/logos/escuela.webp')] bg-contain bg-center bg-no-repeat fixed right-0 translate-x-[17dvw] top-0 w-full h-full z-[-2]  pointer-events-none select-none" 
+  style="-webkit-mask-image: linear-gradient(to right, transparent 15%, black 45%, black 100%); mask-image: linear-gradient(to right, transparent 15%, black 45%, black 100%);">
+  </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 h-full">
     <div class="flex flex-col justify-center items-center lg:items-start gap-8 lg:gap-10 order-2 lg:order-1">
-        <h1 class="font-bernoru font-bold w-full lg:w-fit lg:max-w-[983.04px] text-center lg:text-left  text-5xl md:text-7xl">C.E.B.G Manuel <br/> Urbano <br/> Ayarza</h1>
+        <h1 class="font-bernoru font-bold w-full lg:max-w-[983.04px] text-center lg:text-left text-6xl">C.E.B.G Manuel <br/> Urbano <br/> Ayarza 
+                <span class="text-md lg:text-xl text-center lg:text-left"><br/>Formando <b class="text-secondary">el futuro de Colón</b></span>
+        </h1>
         <diV class="flex flex-col lg:flex-row items-center justify-start gap-5 lg:gap-4">
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
                 <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor">
@@ -17,38 +22,7 @@
         </a>
     </div>
     <div class="hidden lg:flex w-full h-full items-center justify-end order-1 lg:order-2">
-        <div class="circle shadow-xl/20"> 
-            <img 
-            loading="eager"
-            fetchpriority="high"
-            alt="logo de la escuela Manuel Urbano Ayarza"
-            decoding="sync"
-            src="/logos/logo.webp">
-        </div>
+       
     </div>
   </div>
 </header>
-
-<style>
- 
-    .circle{
-        width: 80%;
-        aspect-ratio: 1 / 1;
-        border-radius: 50%;
-        background-color: var(--color-secondary);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .circle>img{
-        content: "";
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-</style>

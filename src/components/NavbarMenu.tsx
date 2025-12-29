@@ -72,7 +72,7 @@ export default function NavbarMenu(props: NavbarMenuProps) {
 
         const getLinkClasses = (path: string): string => {
           const baseClasses =
-          "rounded-xl p-2 min-w-auto lg:min-w-[130px] max-w-auto lg:max-w-[130px] w-full lg:w-[130px] flex justify-center items-center font-bold transition duration-150 hover:animate-menu-link-hover";
+          "rounded-2xl p-2 min-w-auto lg:min-w-[130px] max-w-auto lg:max-w-[130px] w-full lg:w-[130px] flex justify-center items-center font-bold transition duration-150 hover:animate-menu-link-hover";
           const hoverClasses = "hover:bg-secondary hover:text-primary";
 
           // Aplica estilos 'activos' si la ruta coincide
@@ -149,11 +149,11 @@ export default function NavbarMenu(props: NavbarMenuProps) {
         
      
 
-  const menuContainerClasses = `flex justify-end w-full gap-x-[10px] px-[10px] py-[10px] z-50 ${
+  const menuContainerClasses = `flex justify-end w-full gap-x-[10px] px-[10px] py-[10px] z-50${
     isMenuVisible || isOpen
       ? "h-[calc(100dvh-var(--size-navbar-height))] bg-primary absolute top-[var(--size-navbar-height)] left-0 shadow-lg"
       : "hidden"
-  } ${isMenuVisible ? "lg:h-auto lg:w-auto lg:bg-transparent lg:static lg:top-0 lg:left-0 lg:z-auto lg:px-0 lg:py-0 lg:shadow-none" : ""}`;
+  } ${isMenuVisible ? "lg:h-auto lg:w-auto lg:bg-primary/50 lg:px-6 lg:py-2 rounded-4xl lg:static lg:top-0 lg:left-0 lg:z-auto lg:px-0 lg:py-0 lg:shadow-none" : ""}`;
 
   const menuClasses = `${
     isMenuVisible ? "flex lg:flex-row" : "flex-col"
