@@ -78,10 +78,10 @@ export default function NavbarMenu(props: NavbarMenuProps) {
     // Para pantallas pequeñas, ocultar el menú y cerrarlo
     if (size <= 1024) {
       setIsOpen(false);
-      activeScroll();
     } else {
       // Para pantallas grandes, mostrar el menú y abrirlo
       setIsOpen(true);
+      activeScroll();
     }
   };
 
@@ -125,7 +125,7 @@ export default function NavbarMenu(props: NavbarMenuProps) {
 
   const menuClasses = () => {
     let baseClasses =
-      "flex gap-x-[10px] gap-y-[10px] lg:gap-y-[0px] w-full h-[calc(100dvh-var(--size-navbar-height))] bg-primary absolute z-50 top-[var(--size-navbar-height)] left-0 shadow-lg lg:h-auto lg:w-auto lg:bg-primary/50 lg:px-6 lg:py-2 rounded-4xl lg:static lg:top-0 lg:left-0 lg:z-auto lg:px-0 lg:py-0 lg:shadow-none";
+      "flex gap-x-[10px] gap-y-[10px] lg:gap-y-[0px] w-full h-[calc(100dvh-var(--size-navbar-height))] bg-primary absolute z-50 top-[var(--size-navbar-height)] left-0 shadow-lg lg:h-auto lg:w-auto lg:bg-primary/50 lg:px-6 lg:py-2 rounded-4xl lg:static lg:top-0 lg:left-0 lg:z-auto lg:px-0 lg:py-0 lg:shadow-none transition-colors";
 
     // Ocultar el menú en pantallas pequeñas si no está abierto
     if (!isOpen && windowWidth <= 1024) {
