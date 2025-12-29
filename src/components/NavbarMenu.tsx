@@ -74,14 +74,13 @@ export default function NavbarMenu(props: NavbarMenuProps) {
     }
 
     setWindowWidth(size);
-
     // Para pantallas pequeñas, ocultar el menú y cerrarlo
     if (size <= 1024) {
       setIsOpen(false);
     } else {
       // Para pantallas grandes, mostrar el menú y abrirlo
-      setIsOpen(true);
       activeScroll();
+      setIsOpen(true);
     }
   };
 
