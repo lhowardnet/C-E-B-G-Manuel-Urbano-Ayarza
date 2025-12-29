@@ -105,12 +105,10 @@ export default function NavbarMenu(props: NavbarMenuProps) {
 
   const activeScroll = () => {
     body.current.style.overflow = "auto";
-    html.current.style.overflow = "auto";
   };
 
   const disableScroll = () => {
     body.current.style.overflow = "hidden";
-    html.current.style.overflow = "hidden";
   };
 
   
