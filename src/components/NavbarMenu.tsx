@@ -2,14 +2,15 @@ import { useEffect, useState, useRef, type MouseEventHandler } from "react";
 import { navigate } from "astro:transitions/client";
 interface NavbarMenuProps {
   IsOpen?: boolean;
+  OnMenuToggle: (isOpen: boolean) => void;
 }
 
 export default function NavbarMenu(props: NavbarMenuProps) {
+
   const cancelResize = useRef<NodeJS.Timeout | null>(null);
   const body = useRef<HTMLBodyElement | null>(null);
   const html = useRef<HTMLHtmlElement | null>(null);
   const menu = useRef<HTMLUListElement | null>(null);
-  const anchors = useRef<HTMLAnchorElement[]>([]);
 
   // ----------------------------------------------Estados-------------------------------------------------------
 
@@ -20,17 +21,15 @@ export default function NavbarMenu(props: NavbarMenuProps) {
   // -----------------------------------------------Efectos-----------------------------------------------
 
   useEffect(() => {
+
     body.current = window.document.querySelector("body");
     html.current = window.document.querySelector("html");
-
-    anchors.current = Array.from(menu.current.querySelectorAll("a"));
 
     const handlePageLoad = () => setCurrentPath(window.location.pathname);
     document.addEventListener("astro:page-load", handlePageLoad);
 
     const initialWidth = window.innerWidth;
     setWindowWidth(initialWidth);
-    setIsOpen(initialWidth > 1024);
 
     const handleResize = () => {
       clearTimeout(cancelResize.current);
@@ -48,11 +47,17 @@ export default function NavbarMenu(props: NavbarMenuProps) {
   }, []);
 
   useEffect(() => {
+
     if (props.IsOpen === undefined) return;
 
     setIsOpen(props.IsOpen);
-    navigationToggleClickHandler();
-  }, [props.IsOpen]);
+
+    if(isOpen)
+      disableScroll();
+    else
+      activeScroll();
+  
+  }, [props.IsOpen, isOpen]);
 
   // -----------------------------------------------Funciones----------------------------------------------------------------------------------------------------
 
@@ -69,32 +74,18 @@ export default function NavbarMenu(props: NavbarMenuProps) {
   };
 
   const onResize = (size: number) => {
+   
     if (windowWidth === size) {
       return;
     }
 
     setWindowWidth(size);
-    // Para pantallas pequeñas, ocultar el menú y cerrarlo
-    if (size <= 1024) {
-      setIsOpen(false);
-    } else {
-      // Para pantallas grandes, mostrar el menú y abrirlo
-      activeScroll();
-      setIsOpen(true);
-    }
+    setIsOpen(false);
+    props.OnMenuToggle(false);
+
   };
 
-  const navigationToggleClickHandler = () => {
-    if (isOpen) {
-      //Cerrar menu
-      setIsOpen(false);
-      activeScroll();
-    } else {
-      //Abrir menu
-      setIsOpen(true);
-      disableScroll();
-    }
-  };
+ 
 
   const linkClickHandler: MouseEventHandler<HTMLAnchorElement> = async (
     event
@@ -105,12 +96,12 @@ export default function NavbarMenu(props: NavbarMenuProps) {
 
     if (windowWidth <= 1024) {
       setIsOpen(false);
-      activeScroll();
+      props.OnMenuToggle(false);
     }
 
     setCurrentPath(href);
     navigate(href, { history: "push" });
-  };
+  }; 
 
   const activeScroll = () => {
     body.current.style.overflow = "auto";
@@ -122,27 +113,31 @@ export default function NavbarMenu(props: NavbarMenuProps) {
     html.current.style.overflow = "hidden";
   };
 
+  
   const menuClasses = () => {
     let baseClasses =
-      "flex gap-x-[10px] gap-y-[10px] lg:gap-y-[0px] w-full h-[calc(100dvh-var(--size-navbar-height))] bg-primary absolute z-50 top-[var(--size-navbar-height)] left-0 shadow-lg lg:h-auto lg:w-auto lg:bg-primary/50 lg:px-6 lg:py-2 rounded-4xl lg:static lg:top-0 lg:left-0 lg:z-auto lg:px-0 lg:py-0 lg:shadow-none transition-colors";
+      "flex gap-x-[10px] gap-y-[10px] lg:gap-y-[0px] w-full h-[calc(100dvh-var(--size-navbar-height))] bg-primary absolute z-50 top-[var(--size-navbar-height)] left-0 shadow-lg lg:h-auto lg:w-auto lg:bg-primary/50 lg:px-6 lg:py-2 rounded-[0px] lg:rounded-4xl lg:static lg:top-0 lg:left-0 lg:z-auto lg:px-0 lg:py-0 lg:shadow-none transition-colors ";
+
+    // Mostrar el menú en fila en pantallas grandes si está abierto
+    if (isOpen && (windowWidth > 1024 || windowWidth === 0)) {
+      baseClasses += "flex-row";
+      return baseClasses;
+    }
 
     // Ocultar el menú en pantallas pequeñas si no está abierto
     if (!isOpen && windowWidth <= 1024) {
-      baseClasses += " hidden";
+      baseClasses += "hidden";
       return baseClasses;
     }
 
-    // Mostrar el menú en fila en pantallas grandes si está abierto
-    if (isOpen && windowWidth > 1024) {
-      baseClasses += " lg:flex-row";
-      return baseClasses;
-    }
-
+ 
     // Mostrar el menú en columna en pantallas pequeñas si esta abierto
     if (isOpen && windowWidth <= 1024) {
-      baseClasses += " flex-col";
+      baseClasses += "flex-col";
       return baseClasses;
     }
+
+    return baseClasses;
   };
 
   return (
