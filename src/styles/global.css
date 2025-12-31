@@ -2,8 +2,6 @@
 @plugin '@midudev/tailwind-animations';
 
 
-
-
 @font-face{
     font-family: 'Bernoru';
     src: url('/fonts/bernoru-blackultraexpanded.otf') format('opentype');
@@ -76,36 +74,54 @@
         }
     } 
 
-    @keyframes animate-fade-out {
+    @keyframes fade-in-fade-out {
         0%{
+            opacity: 0;
+        }
+        50%{
             opacity: 1;
         }
         100%{
             opacity: 0;
         }
-    }
-
-    @keyframes animate-fade-in {
-        0%{
-            opacity: 0;
-        }
-        100%{
-            opacity: 1;
-        }
-    
-    
     }
 
 }
 
 @theme{
     --font-bernoru: 'Bernoru', sans-serif;
-    --color-primary: #2b64bb;
-    --color-secondary:#ffde59;
+    /*primary*/
+    --color-primary: oklch(0.51 0.15 259);
+    --color-primary-50:  oklch(0.97 0.02 259);
+    --color-primary-100: oklch(0.94 0.04 259);
+    --color-primary-200: oklch(0.88 0.07 259);
+    --color-primary-300: oklch(0.78 0.11 259);
+    --color-primary-400: oklch(0.66 0.14 259);
+    --color-primary-500: oklch(0.51 0.15 259); 
+    --color-primary-600: oklch(0.44 0.15 259);
+    --color-primary-700: oklch(0.36 0.13 259);
+    --color-primary-800: oklch(0.28 0.10 259);
+    --color-primary-900: oklch(0.20 0.07 259);
+    --color-primary-950: oklch(0.13 0.05 259);
+    /*secondary*/
+    --color-secondary: oklch(0.90 0.15 95);
+    --color-secondary-50:  oklch(0.98 0.04 95);
+    --color-secondary-100: oklch(0.96 0.07 95);
+    --color-secondary-200: oklch(0.93 0.10 95);
+    --color-secondary-300: oklch(0.90 0.13 95);
+    --color-secondary-400: oklch(0.86 0.15 95);
+    --color-secondary-500: oklch(0.80 0.15 95);
+    --color-secondary-600: oklch(0.70 0.14 95);
+    --color-secondary-700: oklch(0.58 0.12 95);
+    --color-secondary-800: oklch(0.44 0.10 95);
+    --color-secondary-900: oklch(0.30 0.08 95);
+    --color-secondary-950: oklch(0.18 0.05 95);
+
     --color-transparent: transparent;
     --size-navbar-height: 64px;
     --animate-menu-toggle: menu-toggle 3s forwards ease-in-out;
-    --animate-menu-link-hover: menu-link-hover 0.2s forwards ease-in-out;
+    --animate-menu-link-hover: menu-link-hover 0.2s forwards ease-in-out; 
+    --animate-fade-in-fade-out: fade-in-fade-out 5s forwards ease-in-out;
     --animate-menu-toggle-position: -140px;
 
 }
