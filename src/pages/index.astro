@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import Box from "../components/Box.astro";
 import BoxTitle from "../components/BoxTitle.astro";
-import InstagramCarousel from "../components/InstagramCarousel";
+import ActivitiesGrid from "../components/ActivitiesGrid.astro";
 import { Icon } from "astro-icon/components";
 ---
 
@@ -83,7 +83,7 @@ import { Icon } from "astro-icon/components";
     </article>
 
     <article 
-    class="flex flex-col min-h-[100dvh] animate-fade-in animate-fill-mode-forwards timeline-view animate-range-[0%_50%]"> 
+    class="flex flex-col min-h-[100dvh]"> 
       <BoxTitle
         className="flex-auto bg-transparent p-4 pl-0 sticky top-0 z-1 mb-2 rounded-none border-none"
         title="Actividades"
@@ -91,8 +91,8 @@ import { Icon } from "astro-icon/components";
         <Icon name="lucide:graduation-cap" class="w-6 h-6" slot="icon" />
       </BoxTitle>
 
-      <div class="flex items-center flex-1">
-        <InstagramCarousel client:load />
+      <div class="flex flex-col flex-1 w-full">
+        <ActivitiesGrid />
       </div>
 
     </article>
