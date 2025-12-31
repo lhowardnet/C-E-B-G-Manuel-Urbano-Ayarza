@@ -75,7 +75,7 @@ const formatDate = (timestamp: string) => {
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70" />
 
         {/* Badge - Top Left */}
-        <div class="absolute top-3 left-3 flex items-center gap-1 px-3 py-1 rounded-full bg-yellow-400 text-white text-sm font-semibold">
+        <div class="absolute top-3 left-3 flex items-center gap-1 px-3 py-1 rounded-full bg-yellow-400 text-primary-500 text-sm font-semibold">
           <Icon name="lucide:play-circle" class="w-4 h-4" />
           {post.isReel ? "Reel" : post.mediaType}
         </div>
@@ -86,7 +86,7 @@ const formatDate = (timestamp: string) => {
             {post.caption || "Actividad"}
           </h3>
           <div class="flex items-center gap-2">
-            <span class="bg-yellow-400 text-primary-950 font-bold px-3 py-1 rounded-full text-sm">
+            <span class="bg-yellow-400 text-primary-500 font-bold px-3 py-1 rounded-full text-sm">
               {formatDate(post.timestamp)}
             </span>
           </div>
