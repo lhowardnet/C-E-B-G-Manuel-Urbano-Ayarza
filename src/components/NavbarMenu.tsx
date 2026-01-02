@@ -25,23 +25,23 @@ export default function NavbarMenu(props: NavbarMenuProps) {
     body.current = window.document.querySelector("body");
     html.current = window.document.querySelector("html");
 
-    const handlePageLoad = () => setCurrentPath(window.location.pathname);
+    const handlePageLoad = () => { setCurrentPath(window.location.pathname); onResize(window.innerWidth); };
+    
+    document.addEventListener("DOMContentLoaded", handlePageLoad);
     document.addEventListener("astro:page-load", handlePageLoad);
 
-    const initialWidth = window.innerWidth;
-    setWindowWidth(initialWidth);
+    setWindowWidth(window.innerWidth);
 
     const handleResize = () => {
       clearTimeout(cancelResize.current);
       cancelResize.current = setTimeout(() => onResize(window.innerWidth), 60);
     };
 
-    window.addEventListener("load", () => onResize(window.innerWidth));
     window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener("load", () => onResize(window.innerWidth));
       document.removeEventListener("astro:page-load", handlePageLoad);
+      document.removeEventListener("DOMContentLoaded", handlePageLoad);
       window.removeEventListener("resize", handleResize);
     };
   }, []);
