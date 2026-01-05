@@ -68,7 +68,7 @@ export default function NavbarMenu(props: NavbarMenuProps) {
 
     // Aplica estilos 'activos' si la ruta coincide
     const activeClasses =
-      currentPath === path ? "bg-secondary text-primary" : "text-white";
+      currentPath.includes(path) ? "bg-secondary text-primary" : "text-white";
 
     return `${baseClasses} ${hoverClasses} ${activeClasses}`;
   };
