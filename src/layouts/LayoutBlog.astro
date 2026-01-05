@@ -13,9 +13,9 @@ const { title, subtitle, heroImage, description } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description} widthFull>
-    <HeroBlog title={title} subtitle={subtitle} image={heroImage} />
+    <HeroBlog />
 
-    <div class="relative z-10 bg-gray-100 min-h-screen pb-20 px-4">
+    <div class="relative z-10 bg-slate-200 min-h-screen pb-20 px-4">
         <div
             class="absolute inset-0 overflow-hidden pointer-events-none h-[161px] translate-y-[-160px]"
         >
@@ -38,7 +38,7 @@ const { title, subtitle, heroImage, description } = Astro.props;
       L0 120
       Z
     "
-                    fill="#F3F4F6"></path>
+                    fill="#e2e8f0"></path>
             </svg>
         </div>
         <div class="max-w-6xl mx-auto">

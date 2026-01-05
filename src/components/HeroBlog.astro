@@ -1,20 +1,6 @@
----
-interface Props {
-    title?: string;
-    subtitle?: string;
-    image?: string;
-}
-
-const {
-    title = "Blog",
-    subtitle = "C.E.B.G Manuel Urbano Ayarza",
-    image = "/logos/blob-hero.png",
-} = Astro.props;
----
-
 <section class="relative w-full overflow-hidden">
     <div
-        class="fixed bg-[url('/logos/blob-hero-cielo.png')] bg-cover bg-center bg-no-repeat right-0 top-0 w-full h-[65dvh] z-[-2] animate-fade-out animate-fill-mode-forwards timeline-scroll animate-range-[0%_50%]"
+        class="fixed bg-[url('/logos/blob-hero-cielo.webp')] bg-cover bg-center bg-no-repeat right-0 top-0 w-full h-[65dvh] z-[-2] animate-fade-out animate-fill-mode-forwards timeline-scroll animate-range-[0%_50%]"
         style="mask-image: linear-gradient(to right, transparent 15%, black 77%, black 100%); -webkit-mask-image: linear-gradient(to right, transparent 15%, black 77%, black 100%);"
     >
     </div>
@@ -31,7 +17,7 @@ const {
                 <h2
                     class="text-2xl sm:text-3xl lg:text-4xl font-bernoru font-bold text-white drop-shadow-lg leading-tight mb-2 lg:mb-4"
                 >
-                    {subtitle}
+                    C.E.B.G Manuel Urbano Ayarza
                 </h2>
 
                 <!-- Blog Title with decorative style -->
@@ -39,12 +25,12 @@ const {
                     class="flex items-center justify-center lg:justify-start gap-2"
                 >
                     <span class="text-yellow-300 text-xl lg:text-2xl">✨</span>
-                    <h1
+                    <h2
                         class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-script text-yellow-300 drop-shadow-lg italic tracking-wide"
                         style="font-family: 'Pacifico', 'Brush Script MT', cursive; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);"
                     >
-                        {title}
-                    </h1>
+                        Blog
+                    </h2>
                     <span class="text-yellow-300 text-xl lg:text-2xl">✨</span>
                 </div>
             </div>
