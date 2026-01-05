@@ -1,16 +1,17 @@
 ---
-import { ClientRouter, fade, slide } from 'astro:transitions';
-import Footer from '../components/Footer.astro';
-import Navbar from '../components/Navbar.tsx';
-import '../styles/global.css'; 
+import { ClientRouter, fade, slide } from "astro:transitions";
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.tsx";
+import "../styles/global.css";
 
-const { 
-	title, 
+const {
+	title,
 	description = "Escuela Manuel Urbano Ayarza - Institución educativa pública de Colón, Panamá. Educación de calidad desde 1918.",
 	canonicalURL = new URL(Astro.url.pathname, Astro.site),
 	ogImage = "/logos/escuela.webp",
+	widthFull = false,
 } = Astro.props;
---- 
+---
 
 <html class="bg-primary scroll-smooth" lang="es">
 	<head>
@@ -20,11 +21,11 @@ const {
 		<meta name="generator" content={Astro.generator} />
 		<meta name="robots" content="index, follow" />
 		<meta name="language" content="Spanish" />
-		
+
 		<title>{title} - Escuela Manuel Urbano Ayarza</title>
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonicalURL} />
-		
+
 		<!-- Open Graph / Social Media -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={Astro.url} />
@@ -33,14 +34,19 @@ const {
 		<meta property="og:image" content={new URL(ogImage, Astro.site)} />
 		<meta property="og:site_name" content="Manuel Urbano Ayarza" />
 		<meta property="og:locale" content="es_PA" />
-						
-        <ClientRouter />
+
+		<ClientRouter />
 	</head>
 	<body>
-        <Navbar transition:persist client:load />
-        <main class="px-[8px] xl:px-[0px] mx-auto max-w-6xl" transition:animate="fade">
-            <slot/>
-        </main>
+		<Navbar transition:persist client:load />
+		<main
+			class={widthFull
+				? "w-full"
+				: "px-[8px] xl:px-[0px] mx-auto max-w-6xl"}
+			transition:animate="fade"
+		>
+			<slot />
+		</main>
 		<Footer transition:persist />
 	</body>
 </html>

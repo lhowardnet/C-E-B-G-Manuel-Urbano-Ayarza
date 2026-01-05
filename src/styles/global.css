@@ -1,8 +1,8 @@
-@import "tailwindcss"; 
+@import "tailwindcss";
 @plugin '@midudev/tailwind-animations';
 
 
-@font-face{
+@font-face {
     font-family: 'Bernoru';
     src: url('/fonts/bernoru-blackultraexpanded.otf') format('opentype');
     font-weight: 700;
@@ -11,21 +11,32 @@
 }
 
 
-@layer base{
-    *{
+@layer base {
+    * {
         font-family: sans-serif;
         color: var(--color-white);
-    } 
-
-    html, body {
-    cursor: pointer !important;
-    } 
-
-    p ,div, span, h1, h2, h3, h4, h5, h6, li, button {
-      cursor: default;
     }
-    
-    a[href*="/robotics"]::after{
+
+    html,
+    body {
+        cursor: pointer !important;
+    }
+
+    p,
+    div,
+    span,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    li,
+    button {
+        cursor: default;
+    }
+
+    a[href*="/robotics"]::after {
         content: "";
         width: 15px;
         height: 15px;
@@ -35,69 +46,60 @@
         top: -4px;
         background-size: cover;
         animation: robot-animation 3.5s infinite;
-    } 
-    
-    @keyframes robot-animation{
+    }
 
-        0%{
+    @keyframes robot-animation {
+
+        0% {
             transform: translateY(0px);
         }
-        50%{
+
+        50% {
             transform: translateY(-5px);
         }
-        100%{
+
+        100% {
             transform: translateY(0px);
         }
 
     }
 
     @keyframes menu-link-hover {
-        0%{
+        0% {
             transform: translateY(0px);
         }
-        50%{
+
+        50% {
             transform: translateY(-1px);
         }
-        100%{
+
+        100% {
             transform: translateY(-3px);
-        }
-    } 
-
-    @keyframes menu-toggle {
-        0%{
-            transform: translateX(0px);
-        }
-
-        100%{
-
-            transform: translateX(var(--animate-menu-toggle-position));
-        }
-    } 
-
-    @keyframes fade-in-fade-out {
-        0%{
-            opacity: 0;
-        }
-        50%{
-            opacity: 1;
-        }
-        100%{
-            opacity: 0;
         }
     }
 
+    @keyframes menu-toggle {
+        0% {
+            transform: translateX(0px);
+        }
+
+        100% {
+
+            transform: translateX(var(--animate-menu-toggle-position));
+        }
+    }
 }
 
-@theme{
+@theme {
     --font-bernoru: 'Bernoru', sans-serif;
     /*primary*/
     --color-primary: oklch(0.51 0.15 259);
-    --color-primary-50:  oklch(0.97 0.02 259);
+    --color-primary-50: oklch(0.97 0.02 259);
     --color-primary-100: oklch(0.94 0.04 259);
     --color-primary-200: oklch(0.88 0.07 259);
     --color-primary-300: oklch(0.78 0.11 259);
     --color-primary-400: oklch(0.66 0.14 259);
-    --color-primary-500: oklch(0.51 0.15 259); 
+    --color-primary-500: oklch(0.51 0.15 259);
     --color-primary-600: oklch(0.44 0.15 259);
     --color-primary-700: oklch(0.36 0.13 259);
     --color-primary-800: oklch(0.28 0.10 259);
@@ -105,7 +107,7 @@
     --color-primary-950: oklch(0.13 0.05 259);
     /*secondary*/
     --color-secondary: oklch(0.90 0.15 95);
-    --color-secondary-50:  oklch(0.98 0.04 95);
+    --color-secondary-50: oklch(0.98 0.04 95);
     --color-secondary-100: oklch(0.96 0.07 95);
     --color-secondary-200: oklch(0.93 0.10 95);
     --color-secondary-300: oklch(0.90 0.13 95);
@@ -120,14 +122,14 @@
     --color-transparent: transparent;
     --size-navbar-height: 64px;
     --animate-menu-toggle: menu-toggle 3s forwards ease-in-out;
-    --animate-menu-link-hover: menu-link-hover 0.2s forwards ease-in-out; 
-    --animate-fade-in-fade-out: fade-in-fade-out 5s forwards ease-in-out;
+    --animate-menu-link-hover: menu-link-hover 0.2s forwards ease-in-out;
+    --animate-fade-out-05: fade-out-05 5s forwards ease-in-out;
     --animate-menu-toggle-position: -140px;
 
 }
 
 
 @utility h-navbar {
-    
+
     height: var(--size-navbar-height);
-} 
+}

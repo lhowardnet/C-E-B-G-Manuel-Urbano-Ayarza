@@ -162,10 +162,10 @@ export default function NavbarMenu(props: NavbarMenuProps) {
         <li className="relative w-full lg:w-auto">
           <a
             onClick={linkClickHandler}
-            className={getLinkClasses("/robotics")}
-            href="/robotics"
+            className={getLinkClasses("/blog")}
+            href="/blog"
           >
-            Robótica
+            Blog
           </a>
         </li>
       </ul>

@@ -1,0 +1,68 @@
+---
+interface Props {
+    title?: string;
+    subtitle?: string;
+    image?: string;
+}
+
+const {
+    title = "Blog",
+    subtitle = "C.E.B.G Manuel Urbano Ayarza",
+    image = "/logos/blob-hero.png",
+} = Astro.props;
+---
+
+<section class="relative w-full overflow-hidden">
+    <div
+        class="fixed bg-[url('/logos/blob-hero-cielo.png')] bg-cover bg-center bg-no-repeat right-0 top-0 w-full h-[65dvh] z-[-2] animate-fade-out animate-fill-mode-forwards timeline-scroll animate-range-[0%_50%]"
+    >
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center min-h-[300px] lg:min-h-[380px]"
+        >
+            <!-- Text Content -->
+            <div
+                class="flex flex-col items-center text-center order-1 h-full pt-4"
+            >
+                <!-- School Name -->
+                <h2
+                    class="text-2xl sm:text-3xl lg:text-4xl font-bernoru font-bold text-white drop-shadow-lg leading-tight mb-2 lg:mb-4"
+                >
+                    {subtitle}
+                </h2>
+
+                <!-- Blog Title with decorative style -->
+                <div
+                    class="flex items-center justify-center lg:justify-start gap-2"
+                >
+                    <span class="text-yellow-300 text-xl lg:text-2xl">✨</span>
+                    <h1
+                        class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-script text-yellow-300 drop-shadow-lg italic tracking-wide"
+                        style="font-family: 'Pacifico', 'Brush Script MT', cursive; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);"
+                    >
+                        {title}
+                    </h1>
+                    <span class="text-yellow-300 text-xl lg:text-2xl">✨</span>
+                </div>
+            </div>
+            <div class="order-2 lg:order-1 flex justify-center">
+                <script
+                    src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js"
+                    type="module"></script>
+                <dotlottie-wc
+                    c
+                    src="https://lottie.host/ba9a567f-5ca7-4d47-87f2-9fe8e09d8a1b/1kbqDcI1jr.lottie"
+                    style="width: 300px;height: 300px; transform: translateY(-60px);"
+                    autoplay
+                    loop></dotlottie-wc>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Add Google Font for cursive title -->
+<style is:global>
+    @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+</style>

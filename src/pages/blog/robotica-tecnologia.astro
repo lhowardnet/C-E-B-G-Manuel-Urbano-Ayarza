@@ -1,0 +1,102 @@
+---
+import LayoutBlog from "../../layouts/LayoutBlog.astro";
+---
+
+<LayoutBlog
+    title="Robótica y Tecnología"
+    subtitle="Programa Escolar"
+    heroImage="/logos/robotica.webp"
+    description="Programa de robótica educativa en Manuel Urbano Ayarza. Formando estudiantes con habilidades en ciencia, tecnología, ingeniería y matemáticas."
+>
+    <div class="grid grid-cols-1 lg:grid-cols-[75%_1fr] gap-8">
+        <article class="bg-white p-8 rounded-2xl shadow-sm">
+            <span
+                class="inline-block bg-yellow-300 text-yellow-900 rounded-full px-4 py-1 text-sm font-bold mb-6"
+                >Robótica y Tecnología</span
+            >
+
+            <h1
+                class="font-bernoru font-bold text-4xl md:text-5xl text-primary mb-6"
+            >
+                Programa de Robótica Escolar: Un paso hacia el futuro
+            </h1>
+
+            <div class="prose prose-lg text-gray-700 max-w-none">
+                <p class="lead text-xl leading-relaxed mb-6">
+                    La escuela cuenta con un club de robótica liderado por la
+                    maestra de informática <b>Maruquel Soto</b>. A través de
+                    este programa, los estudiantes desarrollan habilidades en
+                    ciencia, tecnología, ingeniería y matemáticas utilizando
+                    diversas plataformas educativas.
+                </p>
+
+                <h3 class="text-2xl font-bold text-secondary mt-8 mb-4">
+                    Plataformas de desarrollo guiado:
+                </h3>
+                <ul
+                    class="list-disc pl-6 space-y-2 mb-8 bg-gray-50 p-6 rounded-xl"
+                >
+                    <li>Lego EV3</li>
+                    <li>Acebot</li>
+                    <li>Scratch</li>
+                </ul>
+
+                <h3 class="text-2xl font-bold text-secondary mt-8 mb-4">
+                    Software libre:
+                </h3>
+                <ul
+                    class="list-disc pl-6 space-y-2 mb-8 bg-gray-50 p-6 rounded-xl"
+                >
+                    <li>Arduino</li>
+                    <li>Raspberry Pi</li>
+                </ul>
+
+                <p
+                    class="leading-relaxed mb-8 border-l-4 border-blue-500 pl-4 italic"
+                >
+                    "Estos conocimientos han permitido que nuestros estudiantes
+                    participen con éxito en concursos y actividades provinciales
+                    y nacionales."
+                </p>
+
+                <p class="leading-relaxed">
+                    En 2024, el club de robótica de la escuela obtuvo el primer
+                    lugar en la categoría junior de RoboTIC y los segundo y
+                    tercer lugares en la categoría mayor del mismo concurso,
+                    demostrando el excelente trabajo de nuestros estudiantes y
+                    maestros.
+                </p>
+
+                <div class="mt-8 rounded-2xl overflow-hidden shadow-lg">
+                    <img
+                        class="w-full h-auto"
+                        src="/logos/robotica.webp"
+                        alt="Estudiantes de robótica"
+                    />
+                </div>
+            </div>
+        </article>
+
+        <!-- Sidebar (Reuse or Componentize) -->
+        <aside class="hidden lg:flex flex-col gap-6">
+            <div class="sticky top-[120px]">
+                <div
+                    class="bg-white p-6 rounded-2xl shadow-md border border-gray-100"
+                >
+                    <img
+                        src="/logos/maru.webp"
+                        alt="Maestra Maruquel Soto"
+                        loading="lazy"
+                        class="rounded-xl w-full h-auto mb-4 shadow-sm"
+                    />
+                    <p class="text-center text-gray-600 font-medium">
+                        Maestra Maruquel Soto<br />
+                        <span class="text-sm text-gray-400"
+                            >Líder del Club de Robótica</span
+                        >
+                    </p>
+                </div>
+            </div>
+        </aside>
+    </div>
+</LayoutBlog>
