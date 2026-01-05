@@ -66,6 +66,11 @@ export default function NavbarMenu(props: NavbarMenuProps) {
       "rounded-2xl p-2 min-w-auto lg:min-w-[130px] max-w-auto lg:max-w-[130px] w-full lg:w-[130px] flex justify-center items-center font-bold transition duration-150 hover:animate-menu-link-hover";
     const hoverClasses = "hover:bg-secondary hover:text-primary";
 
+    //  Cuando es el primer enlace y la ruta no es la raiz
+    if(path === "/" && currentPath !== "/")
+      path = "/ "; // Agrega un espacio para evitar conicidencia en los otros enlaces, por que "/" coincide en todos los enlaces
+       
+
     // Aplica estilos 'activos' si la ruta coincide
     const activeClasses =
       currentPath.startsWith(path) ? "bg-secondary text-primary" : "text-white";
