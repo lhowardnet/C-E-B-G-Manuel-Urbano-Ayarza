@@ -24,66 +24,85 @@ import { Icon } from "astro-icon/components";
       </BoxTitle>
 
       <div class="grid grid-cols-1 gap-3 lg:grid-cols-2 flex-1">
-          <div class="flex flex-col gap-2 w-full h-full justify-center">
-            <Box
-              className="w-full flex flex-col"
+        <div class="flex flex-col gap-2 w-full h-full justify-center">
+          <Box className="w-full flex flex-col">
+            {/* Stats Section */}
+            <div
+              class="flex flex-row justify-evenly gap-4 bg-primary-950/60 p-6 rounded-t-2xl"
             >
-              {/* Stats Section */}
-              <div class="flex flex-row justify-evenly gap-4 bg-primary-950/60 p-6 rounded-t-2xl">
-                <div class="flex flex-col gap-2 items-center">
-                  <div class="flex flex-row justify-center gap-4 items-center">
-                    <Icon name="lucide:user" class="w-10 h-auto" />
-                    <p class="text-5xl font-bold text-white">350</p>
-                  </div>
-                  <p class="text-secondary text-lg">Estudiantes</p>
+              <div class="flex flex-col gap-2 items-center">
+                <div class="flex flex-row justify-center gap-4 items-center">
+                  <Icon name="lucide:user" class="w-10 h-auto" />
+                  <p class="text-5xl font-bold text-white">350</p>
                 </div>
-                <div class="flex flex-col gap-2 items-center">
-                  <div class="flex flex-row justify-center gap-4 items-center">
-                    <Icon name="lucide:users-round" class="w-10 h-auto" />
-                    <p class="text-5xl font-bold text-white">25</p>
-                  </div>
-                  <p class="text-secondary text-lg">Docentes</p>
-                </div>
+                <p class="text-secondary text-lg">Estudiantes</p>
               </div>
+              <div class="flex flex-col gap-2 items-center">
+                <div class="flex flex-row justify-center gap-4 items-center">
+                  <Icon name="lucide:users-round" class="w-10 h-auto" />
+                  <p class="text-5xl font-bold text-white">25</p>
+                </div>
+                <p class="text-secondary text-lg">Docentes</p>
+              </div>
+            </div>
 
-              {/* Why Choose Us Section */}
-              <div class="border-t border-gray-600 pt-6 bg-primary-950/20 p-6 rounded-b-2xl">
-                <h3 class="flex items-center gap-2 text-2xl font-bold text-white mb-4">
-                  <Icon name="lucide:shield-check" class="w-6 h-6" />
-                  ¿Por qué elegimos?
-                </h3>
-                <ul class="space-y-3 mb-6">
-                  <li class="flex items-center gap-3 text-white">
-                    <Icon name="lucide:check-circle" class="w-5 h-5 rounded-full bg-green-400 flex-shrink-0" />
-                    Educación integral
-                  </li>
-                  <li class="flex items-center gap-3 text-white">
-                    <Icon name="lucide:check-circle" class="w-5 h-5 rounded-full bg-green-400 flex-shrink-0" />
-                    Docentes certificados
-                  </li>
-                  <li class="flex items-center gap-3 text-white">
-                    <Icon name="lucide:check-circle" class="w-5 h-5 rounded-full bg-green-400 flex-shrink-0" />
-                    Tecnología de vanguardia
-                  </li>
-                  <li class="flex items-center gap-3 text-white">
-                    <Icon name="lucide:check-circle" class="w-5 h-5 rounded-full bg-green-400 flex-shrink-0" />
-                    Formación en valores
-                  </li>
-                </ul>
-                <button class="w-full bg-secondary-400 hover:bg-secondary-500 rounded-full text-primary-500 font-bold py-3 px-6 rounded-full transition">
-                  Conoce nuestra oferta educativa
-                </button>
-              </div>
-            </Box>
-          </div>
-          <div class= "bg-[url('/logos/escuela-6.png')] bg-covert lg:bg-contain bg-center bg-no-repeat fixed right-0  translate-x-[none] lg:translate-x-[17dvw] top-0 w-full h-full z-[-2]  pointer-events-none select-none animate-fade-out animate-fill-mode-both timeline-scroll animate-range-[40%_75%]" 
-              style="-webkit-mask-image: linear-gradient(to right, transparent 15%, black 45%, black 100%); mask-image: linear-gradient(to right, transparent 15%, black 45%, black 100%);">
-          </div>
+            {/* Why Choose Us Section */}
+            <div
+              class="border-t border-gray-600 pt-6 bg-primary-950/20 p-6 rounded-b-2xl"
+            >
+              <h3
+                class="flex items-center gap-2 text-2xl font-bold text-white mb-4"
+              >
+                <Icon name="lucide:shield-check" class="w-6 h-6" />
+                ¿Por qué elegimos?
+              </h3>
+              <ul class="space-y-3 mb-6">
+                <li class="flex items-center gap-3 text-white">
+                  <Icon
+                    name="lucide:check-circle"
+                    class="w-5 h-5 rounded-full bg-green-400 flex-shrink-0"
+                  />
+                  Educación integral
+                </li>
+                <li class="flex items-center gap-3 text-white">
+                  <Icon
+                    name="lucide:check-circle"
+                    class="w-5 h-5 rounded-full bg-green-400 flex-shrink-0"
+                  />
+                  Docentes certificados
+                </li>
+                <li class="flex items-center gap-3 text-white">
+                  <Icon
+                    name="lucide:check-circle"
+                    class="w-5 h-5 rounded-full bg-green-400 flex-shrink-0"
+                  />
+                  Tecnología de vanguardia
+                </li>
+                <li class="flex items-center gap-3 text-white">
+                  <Icon
+                    name="lucide:check-circle"
+                    class="w-5 h-5 rounded-full bg-green-400 flex-shrink-0"
+                  />
+                  Formación en valores
+                </li>
+              </ul>
+              <button
+                class="w-full bg-secondary-400 hover:bg-secondary-500 rounded-full text-primary-500 font-bold py-3 px-6 rounded-full transition"
+              >
+                Conoce nuestra oferta educativa
+              </button>
+            </div>
+          </Box>
+        </div>
+        <div
+          class="hidden lg:block bg-[url('/logos/escuela-6.png')] bg-covert lg:bg-contain bg-center bg-no-repeat fixed right-0 translate-x-[none] lg:translate-x-[17dvw] top-0 w-full h-full z-[-2] pointer-events-none select-none animate-fade-out animate-fill-mode-both timeline-scroll animate-range-[40%_75%]"
+          style="-webkit-mask-image: linear-gradient(to right, transparent 15%, black 45%, black 100%); mask-image: linear-gradient(to right, transparent 15%, black 45%, black 100%);"
+        >
+        </div>
       </div>
     </article>
 
-    <article 
-    class="flex flex-col min-h-[100dvh]"> 
+    <article class="flex flex-col min-h-[100dvh]">
       <BoxTitle
         className="bg-transparent p-4 pl-0 sticky top-0 z-1 mb-2 rounded-none border-none"
         title="Actividades"
@@ -94,7 +113,6 @@ import { Icon } from "astro-icon/components";
       <div class="flex flex-col flex-1 w-full justify-center">
         <ActivitiesGrid />
       </div>
-
     </article>
   </section>
 </BaseLayout>
