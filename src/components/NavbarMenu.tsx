@@ -173,6 +173,17 @@ export default function NavbarMenu(props: NavbarMenuProps) {
             Blog
           </a>
         </li>
+
+         <li className="relative w-full lg:w-auto">
+          <a
+            className={getLinkClasses("/admin")}
+            target="_blank"
+            href="https://admin.escuela-manuel-urbano-ayarza.com/admin"
+          >
+            Admin
+          </a>
+        </li>
+
       </ul>
   );
 }
