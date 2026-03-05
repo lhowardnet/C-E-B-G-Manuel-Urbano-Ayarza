@@ -179,7 +179,7 @@ export default function BlogArticleDetail() {
       </div>
 
       <div
-        className="prose prose-lg text-black max-w-none text-justify [&_p]:text-black [&_li]:text-black [&_img]:rounded-xl [&_img]:my-6 [&_img]:w-full [&_h1]:text-3xl [&_h1]:font-bold [&_h2]:text-2xl [&_h2]:font-bold [&_h3]:text-xl [&_h3]:font-bold"
+        className="max-w-none text-black leading-relaxed break-words [&_a]:text-primary [&_a]:underline [&_blockquote]:border-l-4 [&_blockquote]:border-primary/30 [&_blockquote]:pl-4 [&_blockquote]:italic [&_div]:text-black [&_em]:text-black [&_figcaption]:text-gray-600 [&_figcaption]:text-sm [&_h1]:text-3xl [&_h1]:font-bold [&_h1]:text-black [&_h1]:my-4 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-black [&_h2]:my-4 [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-black [&_h3]:my-3 [&_img]:rounded-xl [&_img]:my-6 [&_img]:w-full [&_li]:text-black [&_li]:my-1 [&_ol]:list-decimal [&_ol]:pl-6 [&_p]:text-black [&_p]:my-4 [&_span]:text-black [&_strong]:text-black [&_table]:w-full [&_table]:my-6 [&_td]:border [&_td]:border-gray-300 [&_td]:p-2 [&_th]:border [&_th]:border-gray-300 [&_th]:bg-gray-100 [&_th]:p-2 [&_ul]:list-disc [&_ul]:pl-6"
         dangerouslySetInnerHTML={{ __html: article.content }}
       />
     </article>
